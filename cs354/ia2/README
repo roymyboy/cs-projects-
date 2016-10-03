@@ -1,0 +1,20 @@
+Utsav Roy
+ia2
+
+Running and Compiling 
+	from the directory containing .java files
+	$make 
+	or 
+	$make all
+
+	to clean 
+	$make clean
+
+	to test:
+	after compiling, from the rest directory
+	$./run
+
+Discussion
+	I was able to implement everything except the "while".
+	i tried my best but was unable to implement. I will 
+	try to learn it even after submission.

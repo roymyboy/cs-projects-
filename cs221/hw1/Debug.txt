@@ -1,0 +1,14 @@
+I ran my program after importing everything in eclipse. When i first ran my 
+program i had pass: 31 and fail: 19. I started bebugging it by putting breakpoint
+from the very first line of public boolean conrtains() but i did not find any bug
+in so i kept on moving and came down to add method but i did not find any bug. 
+Moving down to remove method i found rear value was still set to 0 and the 
+program was executing before entering into the loop. so i went back to the add
+initiated the value of rear by adding "rear++". even after doing that i was getting 
+ArrayOutofBondException so i went back again added another break point on isEmpty 
+method where rear was compared to more than 0 value but the value of rear wat that
+so the return method was returning nothing. so i changed the ">" operater to "==". 
+even after that i was getting same error as before but my pass bumped up to 90 and i
+was getting 2 fails. I couldnot figure out what was going on so i got help from tutors
+and they explained me the logic of expanding the size of arry, i called the expandCapacity 
+in the remove method and it worked.

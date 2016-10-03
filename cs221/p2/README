@@ -1,0 +1,89 @@
+****************
+* Project 2
+* Double Linked List
+* CompSci 221 
+* 11/20/2015
+* Utsav Roy
+**************** 
+
+OVERVIEW:
+
+This java program contains a DoubleLinkedList implementation of the DoubleLinkedListADT interface. It contains
+an ListIterator, and uses a test class to ensure the correct functionality. 
+
+INCLUDED FILES:
+
+ * DoubleLinkedList.java - The class that implements 			DoubleLinkedListADT
+ * ListTester.java - Tester file
+ * Node.java - class that represents a double node in a linked 	list
+ * All other interface files requires to compile/run 	ListTester.java and DoubleLinkedList.java as provided 
+ at the start of the project.   
+ * README - this file
+
+COMPILING AND RUNNING:
+
+All project files should be in the same directory.
+
+From the directory containing the .java source code, compile the program: 
+ 
+ 	$ javac DoubleLinkedListTester.java 
+
+To run the program the directory
+ 
+	$ java DoubleLinkedListTester 
+
+ The program doesnot require any input parameter to run the program as all the inpiuts are hard-coded in the ListTester class.
+
+
+PROJECT DESIGN AND IMPORTANT CONCEPTS:
+
+DoubleLinkedList.java class is a new class created for this project. It is a node based implementation of the DoubleLinkedListADT interface of both unordered, and indexed list. The underlying data structure of DLL is node based. LinearNode.java was previously provided but modified to include a previous node reference. DoubleLinkedList.java contains the methods used to modify the list to add and remove elements in various ways. DLL also contains the list iterator class embedded within which contains more methods for list iterator. The function of the list iterator is to... (ADD MORE)  
+
+ListTester class is the driver class for this program.It was updated for this project to implement test cases for all the ListIterator methods. It contains mehods to test pogram in number of different ways.  A list of these scenarios was provided and used to add the appropriate test cases. All other interface files that are required to compile/run double linked list were provided at the start of our project. Before creating the DoubleLinkedList class all of the following files were required: DoubleLinkedListADT.java EmptyCollectionException.java, ElementNotFoundException.java, ListADT.java, IndexedListADT.java, UnorderedListADT.java, and IndexedUnorderedListADT.java. The various metods in this class are built using the double the double linked list as the underlying data sructure. The construcors initilizes the required variables used in this program. All methods are set to throw the aproptiate exceptions if occured. The metods are:
+
+*addToFront(T element): adds an element to the front of the list. It adds the new node to the head of the 
+                        list abd then sets the previous node to null. This metods also keep track of 
+                        modcount which counts the number of modification, size(count) which keps track of size of the list.
+*addToRear(T element): adds the specified element to the rear of the list which is at the tail of the list
+                        After adding the specified element, it sets the previous element to null.
+*addAfter(T element,T target): add the specied element to the certain index. In this method the target is 
+                        located and new node is added to the location after that the next node is sifted backwards and previous node is set to null., this sets the node before the tail
+                        to tail and makes other required adjustments
+*removeFirst(): removes and returns the first element of the list and sets the previous node to the null.
+*removeLast(): removes and returns the last element of the list.
+*remove(T target): first finds the target and then removes the target node, and makes adjustments
+                    with the previous and next node. 
+*first() and last(): gets the first and last element and returns it respectively.
+*add(int index, T element): adds the specified element to the specified index.
+*set(int index, T element): sets the specified element to the specified index and sets the previous element to null. 
+*add(T element): class addToRear method which adds the element to the rear of the element.
+*get(int index): finds the certain element and if found it returns, if not found it throws exception.
+*indexOf(T element): finds the element and returns its element
+*remove(int index); removes the element of the certain index
+*contains(T target): searches for the target and returns true if found.
+*isempty(): returns true when size() is zero. 
+*size(): returns the number of count.
+*toString(): method returns the data from this class in an organized fashion using a stringBuilder. 
+*iterator(): There is an inner class for iterator called LinkedListIterator which implements ListIterator. The inner methods in 
+            this class are add(T arg0), hasNext(), hasPrevious(), next(), nextIndex(), previous(), previousIndex(), remove() and set(T arg0). All these different methods have different fucntions as explained in the javaDoc. 
+
+ 
+All of the classes in the directory interact with each other. There is an extensive ammount of implementation of different interfaces. The main responsibility of DoubleLinkedList.java is to implement DoubleLinkedListADT which extends IndexUnorderListADT and contains the methods of ListIterator. IndexUnorderListADT extends UnorderedListADT<T>, IndexedListADT<T> which contain the methods required to modify the elements in the double linked list. These methods contain the logic to check the list, modify the list, and throw exceptions where appropriate. All of these interfaces interact with each other to achieve the program goals.  
+ 
+ 
+
+TESTING:
+
+To test the program I compiled all of the files in the console and executed ListTester.java in the console.
+All of the tests in my list tester passed which means the methods in DLL are correct in their functionality. For the testing
+of the methods of DoubleLinkedList class I used a driver class ListTester that contained the methods for different tests. I tested all the methods of the DoubleLinkedList on an empty list. Then i performed all the methods the test on a list with one element. I have total 1201 test cases and 19 scenarios each scenarios have almost more than 200 test cases to make sure that I have implemented the different test cases and made sure that in any case user would not have unknown exception or erros. I tried to break my own prigram everyway possible but there are no known error or bugs remaining in the program.
+ 
+DISCUSSION:
+ 
+It is a long project and although not very hard ,during programming I came across many faliures. I used all the resources possible to learn and implement the methods the best way possible. overall, the project was a great learning experience. Learning how to use a node based data structure was interesting. I learned a lot as I was writing the methods in my DLL class and came across many different logical errors that I fixed such as conditionals, knowing where to throw exceptions, and when to set nodes just as a mere example of the errors I came across. Going through these problems helped improve my programming and knowledge of java. 
+The greatest challenge for me in this project was writing the iterator class. Having written it in the previous single linked list homework helped give me a place to start. For the project, going to the tutoring center was very helpful. 
+ 
+Working with the same project for the majority of the semester has greatly improved my overall understanding of the topics we have been covering in class such as the functionality of different lists, throwing exceptions, and creating a robust tester class. While working on this project everything I learned throughout the semester started to come together in the process of working on the project. 
+ 
+
+----------------------------------------------------------------------------

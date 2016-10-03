@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ `whoami` = "root" ]; then
+	echo "ERROR: You are logged in as root!!!!"
+	echo "ERROR: This installer can NOT be ran as root!!!!"
+	echo "ERROR: Exit from root and try again!!!!"
+  exit 1
+fi
+if [ -d "$HOME/.ssh" ]; then
+	echo "Backing existing files"
+	mkdir $HOME/_bkup_backpack
+	mv $HOME/.ssh/* $HOME/_bkup_backpack
+	mv $HOME/_bkup_backpack $HOME/.ssh
+else
+	mkdir $HOME/.ssh
+fi
+echo "Moving your keys to $HOME/.ssh" 
+cp id_rsa $HOME/.ssh
+cp id_rsa.pub $HOME/.ssh
+echo "Setting correct permissions on your private key file"
+chmod 600 $HOME/.ssh/id_rsa
+echo "Attempting to clone your repository"
+git clone git@nullptr.boisestate.edu:utsavroy@u.boisestate.edu
